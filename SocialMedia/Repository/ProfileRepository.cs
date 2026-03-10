@@ -15,5 +15,18 @@ namespace SocialMedia.Repository
         {
             return _context.Users.FirstOrDefault(x => x.Id == id);
         }
+        public bool UpdateProfile(User user)
+        {
+            try
+            {
+                _context.Users.Update(user);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }
