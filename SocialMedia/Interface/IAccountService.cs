@@ -1,9 +1,12 @@
 ﻿using SocialMedia.DTOs;
+using SocialMedia.Models;
 
 namespace SocialMedia.Interface
 {
     public interface IAccountService
     {
-        string IsUser(LoginDTO login);
+        User IsUser(LoginDTO login);
+        bool RegisterUser(RegisterDTO register);
+        string GenerateToken(User user);
     }
 }

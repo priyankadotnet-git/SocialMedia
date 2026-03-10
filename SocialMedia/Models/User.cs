@@ -8,5 +8,8 @@
         public string Email { get; set; }
         public bool IsActive { get; set; }
         public int AccountType { get; set; }
+        public string Bio { get; set; }
+        public string ProfilePicture { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
 }
