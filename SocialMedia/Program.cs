@@ -14,8 +14,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MediaCon")));
 builder.Services.AddScoped<IAccountService, AccountServices>();
 builder.Services.AddScoped<IProfileService, ProfileServices>();
+builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
+builder.Services.AddScoped<IPostRepository, PostRepository>();
 builder.Services.AddScoped<JwtService>();
 
 builder.Services.AddAuthentication(options =>
