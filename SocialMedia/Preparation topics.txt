@@ -1,0 +1,33 @@
+1, c# & oops 
+2, ASP.Net core mvc
+3, Web API
+4, Entity framework core
+5, Minimal api
+6, SignalR(real-time)
+7, Background Services
+8, Middleware Pipeline
+9, Sql server and T-sql
+10,Query optimisation
+11,Indexing strategies
+12,redis and caching techniques
+13,DB transations and locks
+14,SOLID principles
+15,clean architecture
+16,Repository pattern
+17,CQRS + MediatR
+18,dependency injection
+19,Design patterns
+20,Microservices basics
+21,Role-based access
+22,JWT authentication
+23,OAuth2/OpenId
+24,HTTPS/data security
+25,Docker
+26,Azure app service
+27,Azure devops/CI-CD
+28,Azure service bus
+29,UNIT testing
+30,Logging(serilog)
+
+
+13,NoSql (MongoDB) -- optional
