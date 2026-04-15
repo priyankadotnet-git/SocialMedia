@@ -2,6 +2,187 @@
 
 Interview prep
 
+Phase 1: Core C# (Must Master)
+C# Basics
+OOPs Concepts
+Access Modifiers
+Constructors
+Static Keyword
+Abstract Class vs Interface
+Collections
+Generics
+Exception Handling
+Delegates
+Events
+Lambda Expressions
+LINQ
+Extension Methods
+Async / Await
+Multithreading
+Task Parallel Library
+Dependency Injection in C#
+SOLID Principles
+Design Patterns
+Memory Management
+IDisposable / using
+Value Type vs Reference Type
+Boxing / Unboxing
+Ref / Out / In
+Nullable Types
+Reflection
+Attributes
+Serialization
+File Handling
+
+
+Phase 2: SQL Server
+DB Basics
+Normalization
+Primary Key / Foreign Key
+Joins
+Subqueries
+CTE
+Views
+Stored Procedures
+Functions
+Triggers
+Indexes
+Clustered vs Non-Clustered
+Transactions
+ACID Properties
+Deadlock
+Isolation Levels
+Temp Table vs Table Variable
+Pagination
+Query Optimization
+Execution Plan
+
+
+Phase 3: ASP.NET MVC
+MVC Architecture
+Model
+View
+Controller
+Routing
+Razor Syntax
+Layout Page
+Partial View
+ViewBag / ViewData / TempData
+Model Binding
+Validation
+Filters
+Authentication
+Authorization
+Session Management
+State Management
+Bundling / Minification
+
+
+Phase 4: ASP.NET Core MVC
+Middleware
+Program.cs / Startup
+Dependency Injection
+Configuration
+Logging
+Environment Settings
+Static Files
+Tag Helpers
+Areas
+Caching
+Security Headers
+Identity Basics
+Deployment
+
+
+Phase 5: Web API
+REST API Basics
+HTTP Methods
+Status Codes
+Routing in API
+API Controllers
+Request / Response Lifecycle
+DTOs
+Swagger
+Postman Testing
+Authentication with JWT
+Authorization Roles
+Exception Middleware
+Versioning
+Rate Limiting
+API Security
+File Upload API
+
+
+Phase 6: Entity Framework / EF Core
+ORM Basics
+DbContext
+Code First
+Database First
+Migrations
+LINQ with EF
+Tracking vs NoTracking
+Lazy Loading
+Eager Loading
+Explicit Loading
+Repository Pattern
+Unit of Work
+Performance Optimization
+Transactions in EF
+
+
+Phase 7: Frontend Basics for .NET Dev
+HTML
+CSS
+Bootstrap
+JavaScript
+jQuery
+AJAX
+JSON
+Form Validation
+
+
+Phase 8: Advanced Real-Time Topics
+Redis Cache
+SignalR
+Background Services
+Hangfire
+Microservices Basics
+Docker Basics
+IIS Hosting
+CI/CD Basics
+Azure Basics
+App Settings in Production
+Performance Tuning
+Secure Coding
+
+
+Phase 9: Architecture & Clean Code
+3-Tier Architecture
+N-Tier Architecture
+Clean Architecture
+Onion Architecture
+Repository Pattern
+CQRS Basics
+MediatR Basics
+Logging Strategy
+Global Exception Handling
+
+
+Phase 10: Interview Special Round
+Self Introduction
+Explain Current Project
+Real-Time Challenges Faced
+Bug Fix Example
+Performance Improvement Example
+Why Change Job?
+Salary Discussion
+HR Questions
+Scenario-Based Questions
+Tricky Questions
+Mock Interviews
+
+
+
 1, c#
 
 C# is a modern, object-oriented programming language developed by Microsoft. 
@@ -282,4 +463,16 @@ does not allow access specifiers and variables by default public.And we will ach
 
 Yes. Abstract classes can have constructors, and they are called when derived class objects are created.
 
+45. Can interface have method body?
 
+Yes, in modern C# interfaces can have default implementations, but traditionally interfaces were used only for contracts.
+
+46. Can a class inherit multiple abstract classes?
+
+No. A class can inherit only one class, abstract or normal. But it can implement multiple interfaces.
+
+47. Which one should I choose? 
+
+If you need shared code and common state, use abstract class. If you need a contract, loose coupling, or multiple implementations, use interface.
+
+48. 
