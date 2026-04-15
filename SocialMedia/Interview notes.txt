@@ -1,0 +1,285 @@
+
+
+Interview prep
+
+1, c#
+
+C# is a modern, object-oriented programming language developed by Microsoft. 
+I have mainly used it for building web applications, APIs, and backend business logic. 
+In my project, we use C# to handle member enrollment processing, validations, premium calculations, 
+and integration with external systems. I like C# because it supports clean code practices, 
+strong type safety, and it is easy to maintain in enterprise projects.
+
+2. Why C# is Strongly Typed?
+
+C# is strongly typed because every variable must be declared with a specific data type. 
+This helps detect mistakes during compilation itself instead of failing at runtime. 
+In real projects, this improves code quality and reduces production issues.
+
+3. Compilation Process in C#
+
+When we compile C# code, it first gets converted into Intermediate Language. 
+At runtime, the CLR uses JIT compilation to convert IL into machine code based on the system environment. 
+This gives platform flexibility and managed execution features like memory management and exception handling.
+
+4. Value Type vs Reference Type
+
+Value types directly store the actual value, whereas reference types store the memory reference of the object.
+ For example, int is a value type and class objects are reference types. 
+ This matters when passing data between methods because behavior differs in copying and memory usage.
+
+5.Implicit and explicit casting
+
+Type casting means converting one data type to another. Implicit casting happens automatically 
+when there is no data loss, like int to double. Explicit casting is used when there may be data loss, like double to int.
+
+6. Why string is reference type but behaves like value?
+
+String is technically a reference type, but it behaves like value type in many cases because strings are immutable. 
+When we modify a string, a new object gets created instead of changing the existing one.
+
+7, Why decimal used for money instead of double?
+
+Decimal gives higher precision and avoids floating-point rounding issues. 
+That is why it is preferred for premium amount, billing, and financial calculations.
+
+8. OOP
+
+oop is an object oriented programming where programs are organized around the data and behaviour into single object.
+it providers a specific set of rules to develop an application
+Instead of writing everything in one place, we create classes and objects that represent real business entities.
+
+9. 4 Pillars of OOP
+Encapsulation
+Inheritance
+Polymorphism
+Abstraction
+
+10. Encapsulation
+
+Encapsulation means wrapping up of data and methods into a single unit(class).
+In my project we use encapsulation to protect sensitive data and apply validations before updating values, 
+for example member status should not changed directly without business logic.
+
+11. Inheritance
+
+Inheritance is accessing one class features into another class,
+a class feature is inherited by another is a base class and a class feature is inherited from the class is a derived class
+
+it has type,
+
+Single 
+multilevel
+hybrid
+hierachical
+multiple -> this will not supported in inheritance because of the dimond problem and we can achieve it in interface concept.
+
+12. Polymorphism
+
+one action can be done in may ways 
+
+it has types,
+
+Compile time polymorphism -- overloading
+run time polymorphism -- overriding
+
+13, Abstraction
+
+Abstration means hiding then internal implementation details and showing only essential details.
+For example, in member enrollment, the controller calls an Enroll() method through an interface. 
+The controller only knows the method signature and does not know how the enrollment is implemented internally. 
+This reduces dependency and improves maintainability.
+
+14. Why use OOP instead of procedural programming?
+
+OOP is better for large applications because it organizes code into reusable components. 
+It improves maintainability, testing, and scalability. Procedural code becomes harder to manage as the application grows.
+
+15. diff b/w overloading and overriding
+
+Overloading means same method name with different parameters in the same class. 
+Overriding means redefining base class virtual method in derived class with same signature.
+
+16. Which OOP Principle is Most Used in APIs?
+
+In APIs, abstraction is one of the most used OOP principles because controllers should remain lightweight 
+and should not contain business logic. We usually interact with services through interfaces, 
+and the implementation handles validations, database operations, and integrations internally. 
+Encapsulation is also important because it protects business rules inside service classes and domain models.
+
+
+17. why interface preferred
+
+Interfaces are preferred because they promote loose coupling and make the application easier to maintain,
+ test, and extend. Instead of depending on concrete classes, we depend on contracts. 
+ In my projects, controllers usually depend on interfaces like IMemberService, and 
+ the actual implementation is injected through dependency injection.
+
+18. If only one implementation exists, why still use interface?
+
+Even if there is only one implementation today, using an interface prepares the code for future changes,
+ supports unit testing, and keeps dependency inversion principles in place. It is more about good architecture 
+ than current count of implementations.
+
+19. Types of Access Modifiers in C#
+public
+private
+protected
+internal
+protected internal
+private protected
+
+public - Public members are accessible from any class. We use public access for methods or classes 
+			that need to be consumed by other layers, such as controller actions, service methods, or DTO classes.
+Private - Private members are accessible only within the same class. I use private methods for 
+			internal helper logic and private fields to protect data from direct modification.
+Protected - Protected members are accessible within the base class and derived classes. 
+			This is useful when creating reusable base classes where child classes need controlled access 
+			to common properties or methods.
+Internal - Internal members are accessible only within the same assembly. I use internal access for helper 
+			classes or shared components that should stay inside the project and not be exposed externally.
+Protected Internal - Protected internal allows access either within the same assembly or from derived classes 
+			outside the assembly. It is used in reusable libraries when inheritance support is also needed.
+Private Protected - Private protected members are accessible only by derived classes within the same assembly. 
+			It is useful when we want inheritance-based access but still keep it restricted to the current project.
+
+20. What is default access modifier for class?
+
+Top-level class default access modifier is internal if not specified.
+
+21. What is default access modifier for class members?
+
+For class members like fields or methods, default access modifier is private if not specified.
+
+22. Difference between protected and internal?
+
+Protected gives access through inheritance. Internal gives access to any class within the same assembly, even without inheritance.
+
+
+I usually keep access as restrictive as possible. 
+Only methods required by other layers are public. 
+Internal business logic stays private, and reusable inheritance logic can be protected. 
+This keeps the code secure and easier to maintain.
+
+
+I usually keep access as restrictive as possible. Only methods required by other layers are public. 
+Internal business logic stays private, and reusable inheritance logic can be protected. 
+This keeps the code secure and easier to maintain.
+
+23. what is constructor
+
+A constructor is a special method that gets executed automatically when an object is Created. 
+It is mainly used to initialize properties, assign default values, or inject required dependencies. 
+In real projects, I mostly use constructors for dependency injection in controllers and services.
+
+and it has types,
+
+Default Constructor
+Parameterized Constructor
+Constructor Overloading
+Static Constructor
+Private Constructor
+Copy Constructor
+Constructor Chaining
+
+24. Default Constructor
+
+A default constructor does not take parameters. It is used when we want to initialize default values like 
+status, created date, or empty collections during object creation.
+
+25. Parameterized Constructor
+
+A parameterized constructor is used when certain values are mandatory during object creation. 
+It helps ensure the object is created with valid required data instead of setting everything later.
+
+26. Constructor Overloading
+
+Constructor overloading means having multiple constructors with different parameter lists. 
+It gives flexibility to create objects in different ways based on available data.
+
+27. Static Constructor
+
+A static constructor is used to initialize static data and it runs only once in the application lifetime 
+for that class. It is useful for static configuration or one-time setup logic.
+
+28. Private Constructor
+
+A private constructor restricts object creation from outside the class. It is commonly used in 
+singleton design pattern or utility classes where controlled instantiation is required.
+
+29. Copy Constructor (Common Concept)
+
+To clone existing object data
+
+30. Constructor Chaining
+
+Constructor chaining means one constructor calls another constructor in the same class using this(). 
+It helps avoid duplicate initialization logic.
+
+31.Can constructor be inherited?
+
+No, constructors are not inherited. However, a derived class can call the base class constructor using base().
+
+32. Can constructor be virtual?
+
+No, constructors cannot be virtual because they are used for object creation, and polymorphism applies after object creation.
+
+33. if no constructor is written, what happens?
+
+If no constructor is defined, C# provides an implicit default constructor automatically, as long as no other constructor exists.
+
+34. Static? 
+
+The static keyword is used for members that belong to the class rather than an object instance. 
+Static members can be accessed directly using the class name, and they are commonly used for shared data, 
+utility methods, constants, and one-time initialization logic.
+
+35. Static Variable
+
+A static variable is shared across all instances of a class. If one object changes it, 
+the updated value is visible to all other objects. It is useful for counters, shared settings, or cached values.
+
+36. Static Method
+
+A static method can be called using the class name without creating an object. It is suitable when the 
+method does not depend on instance data. I usually use static methods for pure utility functions like formatting, 
+calculations, or conversions.
+
+37. Static Class
+
+A static class is used when the class only contains shared utility functionality and does not represent an object state. 
+Since it cannot be instantiated, it is ideal for helper methods.
+
+38. Static Constructor
+
+A static constructor is used to initialize static members. It runs only once automatically before the class is accessed for the first time.
+
+39. Can static method access instance members?
+
+No, a static method cannot directly access instance members because instance members belong to an object, 
+and static methods do not have object context.
+
+40. Can instance method access static members?
+
+Yes, instance methods can access static members because static members belong to the class and are 
+available globally within that class context.
+
+41. can constructor be static and public?
+
+No. A static constructor cannot have access modifiers and cannot take parameters.
+
+42. Abstract Class
+
+An Abstract class can have both abstract and non-abstract method, and abtract class members are accessible by using the derived class and 
+cannot create an object, it supports partial abtraction
+
+43, Interface class
+
+interface is a contract that defines required member. It has only method declaration and the definition will be left in the base class.
+does not allow access specifiers and variables by default public.And we will acheive multiple inheritance here.
+
+44. Can abstract class have constructor?
+
+Yes. Abstract classes can have constructors, and they are called when derived class objects are created.
+
+
